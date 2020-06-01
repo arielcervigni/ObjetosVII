@@ -4,14 +4,9 @@ import com.ObjetosVII.Ejercicio1.Pantalla;
 import com.ObjetosVII.Ejercicio2.Alumno;
 import com.ObjetosVII.Ejercicio2.Colegio;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         //ejercicio1();
         ejercicio2();
 
@@ -24,19 +19,24 @@ public class Main {
     }
     private static void ejercicio2() {
         Colegio colegio = new Colegio();
-        Alumno a1 = new Alumno(null,null);
+        Alumno a1 = null;
         Alumno a2 = new Alumno("Pepe Grillo", "Argentino");
         Alumno a3 = new Alumno("Pepita La Pistolera", "Argentino");
         Alumno a4 = new Alumno("Leroy Sane", "Aleman");
         Alumno a5 = new Alumno("Sadio Mane", "Argelia");
         Alumno a6 = new Alumno("Prueba", "Eliminar");
 
-        colegio.agregarAlumno(a1);
+
         colegio.agregarAlumno(a2);
         colegio.agregarAlumno(a3);
         colegio.agregarAlumno(a4);
         colegio.agregarAlumno(a5);
+        colegio.agregarAlumno(a1);
 
+        for (Alumno a : colegio.getAlumnos())
+        {
+            System.out.println(a.toString());
+        }
         /*
         Map<String,Integer> nacionalidades = colegio.verTodos();
 

@@ -24,12 +24,18 @@ public class Colegio {
 
     public void agregarAlumno (Alumno alumno) {
         try {
-            alumnos.add(alumno);
+            validarAlumno(alumno);
         } catch (NullPointerException e){
-                System.out.println("Error al cargar el alumno");
+            System.out.println("Error al cargar el alumno");
         }
     }
-
+    /// Validacion de alumno
+    private void validarAlumno (Alumno alumno) throws NullPointerException {
+        if (alumno==null)
+            throw new NullPointerException();
+        else
+            alumnos.add(alumno);
+    }
     //verNacionalidad(String nacionalidad): Muestra la nacionalidad y el número de alumnos de esa nacionalidad
 
     public int verNacionalidad (String nacionalidad)
@@ -90,6 +96,7 @@ public class Colegio {
     //errores en la ejecución.
     //
     //Por ej: Que todos los alumnos tengan una nacionalidad que exista el alumno que se quiere borrar, etc.
+
 
 
 }
