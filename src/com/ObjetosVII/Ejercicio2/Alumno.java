@@ -6,6 +6,8 @@ public class Alumno {
     protected String nombre;
     protected String nacionalidad;
 
+    public Alumno () {}
+
     public Alumno (String nombre, String nacionalidad)
     {
         this.nombre = nombre;

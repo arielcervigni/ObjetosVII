@@ -1,7 +1,5 @@
 package com.ObjetosVII.Ejercicio2;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.io.IOException;
 import java.util.*;
 
@@ -23,12 +21,13 @@ public class Colegio {
     public ArrayList<String> getNacionalidades () { return nacionalidades; }
 
     //agregarAlumno(Alumno alumno): añade la nacionalidad de un nuevo alumno
-    public void agregarAlumno (@NotNull Alumno alumno) {
 
-        if (alumno.nombre != null && alumno.nacionalidad!= null)
+    public void agregarAlumno (Alumno alumno) {
+        try {
             alumnos.add(alumno);
-       else
-           System.out.println("Error alguno de los atributos en null");
+        } catch (NullPointerException e){
+                System.out.println("Error al cargar el alumno");
+        }
     }
 
     //verNacionalidad(String nacionalidad): Muestra la nacionalidad y el número de alumnos de esa nacionalidad

@@ -24,19 +24,20 @@ public class Main {
     }
     private static void ejercicio2() {
         Colegio colegio = new Colegio();
-        Alumno a1 = new Alumno("Ariel Cervigni", "Argentino");
+        Alumno a1 = new Alumno(null,null);
         Alumno a2 = new Alumno("Pepe Grillo", "Argentino");
         Alumno a3 = new Alumno("Pepita La Pistolera", "Argentino");
         Alumno a4 = new Alumno("Leroy Sane", "Aleman");
         Alumno a5 = new Alumno("Sadio Mane", "Argelia");
         Alumno a6 = new Alumno("Prueba", "Eliminar");
 
-        //colegio.agregarAlumno(a1);
-        //colegio.agregarAlumno(a2);
-        //colegio.agregarAlumno(a3);
-        //colegio.agregarAlumno(a4);
-        //colegio.agregarAlumno(a5);
+        colegio.agregarAlumno(a1);
+        colegio.agregarAlumno(a2);
+        colegio.agregarAlumno(a3);
+        colegio.agregarAlumno(a4);
+        colegio.agregarAlumno(a5);
 
+        /*
         Map<String,Integer> nacionalidades = colegio.verTodos();
 
         for (Map.Entry<String, Integer> entry : nacionalidades.entrySet())
@@ -44,15 +45,18 @@ public class Main {
             System.out.println("Nacionalidad: " + entry.getKey() + " ---> Cantidad: " + entry.getValue());
         }
 
-        colegio.borrar(a6);
 
+        colegio.borrar(a6);
         colegio.cuantos();
         for (String s : colegio.getNacionalidades()){
             System.out.println(s);
         }
 
         int verNacio = colegio.verNacionalidad("Argentino");
+
+         */
     }
+
 
 }
 
