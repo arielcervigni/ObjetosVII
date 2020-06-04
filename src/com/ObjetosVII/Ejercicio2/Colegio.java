@@ -1,9 +1,9 @@
 package com.ObjetosVII.Ejercicio2;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
-public class Colegio {
+public class Colegio implements Archivoo {
 
     // 4. Crea una clase colegio que almacene el listado de los alumnos (compuestos por su nombre y nacionalidad).
     ArrayList <Alumno> alumnos;
@@ -98,5 +98,56 @@ public class Colegio {
     //Por ej: Que todos los alumnos tengan una nacionalidad que exista el alumno que se quiere borrar, etc.
 
 
+    @Override
+    public void crearArchivo() throws IOException {
 
+        String path = "C:\\Users\\Taller.MAKER\\Desktop\\ObjetosVII-master\\ArchivoDeAlumnos.txt";
+        File archivo = new File(path);
+
+        if (archivo.exists()) {
+
+            FileOutputStream fos = new FileOutputStream(archivo);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+            try {
+                archivo.setWritable(true);
+                Alumno a = alumnos.get(2);
+                oos.writeObject(a);
+                //oos.close();
+            } catch (IOException e) {
+                System.out.println("ERROR" + e.getMessage());
+                e.printStackTrace();
+            } finally {
+                oos.close();
+            }
+        }else
+            System.out.println("Error el archivo no existe");
+    }
+
+    @Override
+    public void leerArchivo() throws IOException {
+        String path = "C:\\Users\\Taller.MAKER\\Desktop\\ObjetosVII-master\\ArchivoDeAlumnos.txt";
+        File archivo = new File(path);
+
+        if (archivo.exists()) {
+
+            FileInputStream fis = new FileInputStream(archivo);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            try {
+                archivo.setReadable(true);
+                Alumno aux = (Alumno) ois.readObject();
+                //ois.close();
+                System.out.println(aux.toString());
+            } catch (IOException | ClassNotFoundException e) {
+                System.out.println("ERROR" + e.getMessage());
+                e.printStackTrace();
+            } finally {
+                ois.close();
+            }
+        } else
+            System.out.println("Error el archivo no existe");
+
+
+    }
 }

@@ -1,6 +1,8 @@
 package com.ObjetosVII.Ejercicio2;
 
-public class Alumno {
+import java.io.Serializable;
+
+public class Alumno implements Serializable {
 
 
     protected String nombre;

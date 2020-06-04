@@ -4,9 +4,11 @@ import com.ObjetosVII.Ejercicio1.Pantalla;
 import com.ObjetosVII.Ejercicio2.Alumno;
 import com.ObjetosVII.Ejercicio2.Colegio;
 
+import java.io.IOException;
+
 public class Main {
 
-    public static void main(String[] args)  {
+    public static void main(String[] args) throws IOException {
         //ejercicio1();
         ejercicio2();
 
@@ -17,7 +19,7 @@ public class Main {
         Pantalla pantalla = new Pantalla();
         pantalla.adivinar();
     }
-    private static void ejercicio2() {
+    private static void ejercicio2() throws IOException {
         Colegio colegio = new Colegio();
         Alumno a1 = null;
         Alumno a2 = new Alumno("Pepe Grillo", "Argentino");
@@ -33,11 +35,13 @@ public class Main {
         colegio.agregarAlumno(a5);
         colegio.agregarAlumno(a1);
 
+        /*
+
         for (Alumno a : colegio.getAlumnos())
         {
             System.out.println(a.toString());
         }
-        /*
+
         Map<String,Integer> nacionalidades = colegio.verTodos();
 
         for (Map.Entry<String, Integer> entry : nacionalidades.entrySet())
@@ -54,7 +58,10 @@ public class Main {
 
         int verNacio = colegio.verNacionalidad("Argentino");
 
+        colegio.crearArchivo();
          */
+        colegio.leerArchivo();
+
     }
 
 
